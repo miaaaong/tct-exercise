@@ -24,7 +24,7 @@ public class RunManager {
 
 	public static void main(String[] args) {
 		//start threads
-		int threadNum = 20;
+		int threadNum = 30;
 		ExecutorService service = Executors.newFixedThreadPool(threadNum);
 		
 		List<LogWriter> threadList = new ArrayList<>();
@@ -41,11 +41,11 @@ public class RunManager {
 		createReport();
 		
 		//wait and terminate threads
-		while(true) {
-			if(sharedQueue.isEmpty()) {
-				break;
-			}
-		}
+//		while(true) {
+//			if(sharedQueue.isEmpty()) {
+//				break;
+//			}
+//		}
 		
 		for(LogWriter writer : threadList) {
 			writer.stop();

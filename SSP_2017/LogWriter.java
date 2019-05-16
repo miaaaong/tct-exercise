@@ -29,7 +29,7 @@ public class LogWriter implements Runnable {
 
 	@Override
 	public void run() {
-		while(running.get()) {
+		while(running.get() || !sharedQueue.isEmpty()) {
 			try {
 				String log = sharedQueue.take();
 				String[] split = log.split("#");
