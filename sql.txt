@@ -1,0 +1,100 @@
+SQL
+https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_in
+
+
+
+.null값 연산
+레코드 간 산술 연산에서는 null을 제외하고 수행 (ex. count/sum/avg(특정 컬럼))
+
+컬럼 간 산술 연산에서는 결과 값이 null (ex. column1/column2 에서 null이 있으면 결과는 null)
+
+
+
+.in?→ exists 변환 시 (A 19년 2차 4번)
+서브 쿼리 내에 테이블간 조인 조건을 기술해야 함. 그렇지 않으면 결과에 모든 데이터가 포함된다...
+
+
+
+.left outer join의 on 조건절 (A 19년 1차 2번)
+조인 수행 시의 조건일 뿐 전체 결과 건수에 영향을 주지 않는다. (left outer join이므로 조건에 맞는 데이터가 없어도 왼쪽 테이블의 데이터는 결과에 포함됨)
+
+
+
+.index 생성
+create nonunique index ~ 라는 건 없음 (기본적으로 index는 중복을 허용하므로 그냥 create index ~ 하면 됨)
+
+컬럼 값을 변경하여 index에 적용할 수 있음 (ex. create index tb_index on 제품(upper(제품코드)); )
+
+
+
+.문자열
+문자열도 크기 비교 가능 (오름차순으로, ㄱ~ㅎ로 뒤로 갈수록 크다)
+
+
+
+.cartesian product (cross join)
+join 조건을 적합하지 않게 사용하면 불필요한 카티전 곱이 발생하며, n 개 테이블 조인 시 반드시 n-1개의 조인 조건을 지정해야 한다.
+
+
+
+. replace, translate
+replace 함수를 이용하여 특정 문자를 다른 문자로 대체할 수 있고, 유사한 translate 함수를 이용하여 특정 패턴의 모든 글자를 임의의 문자('jQWETa$%*u')로 변환 할 수 있다.
+
+ex.?replace(phone_number, '.', '-')
+
+ex.?translate(phone_number,'0123456789','jQWETa$%*u')
+
+
+
+. CUBE
+CUBE 연산자는 일반적으로 교차 분석 보고서에 사용되는 결과 집합을 생성하는데 사용한다. 또한, CUBE는 GROUP BY절에 지정된 가능한 모든 그룹화 조합의 소계와 총계를 생성한다.
+
+ex.?CUBE(부서번호, 업무)?→ 각 데이터 및 부서번호별/업무별 sum 같은 연산을 해줌
+
+
+
+. 컬럼 조건, 테이블 조건
+테이블 정의 시 컬럼 절에 오는 제약조건(컬럼레벨)과 컬럼 정의 후 뒤에 오는 제약조건(테이블레벨)이 있다. NOT NULL 은 컬럼 레벨에만 사용 가능하다. 즉, NOT NULL 제약조건은 컬럼 정의 바로 옆에서만 지정 가능하다.
+
+테이블 레벨 조건 - primary key, check(price > 0) ...
+
+컬럼 레벨 조건 - primary key, not null, unique, check(price > 0) ...
+
+
+
+. 계층 구조
+level, start with, connect by prior, connect_by_isleaf ...
+
+
+
+. select 절 처리 순서
+from > where > group by > having > select > order by
+
+
+
+. exists
+EXISTS 연산자는 테이블에 특정 행이 있는지 여부에 따라 query 결과가 달라지는 query에 사용된다. 문제의 SQL은 EMP10 테이블의 각 행에 대해 DEPT10 테이블에 department_id가 동일한 행이 있는지 조건 검사를 수행하여 그러한 행이 있다면 그 결과가 출력 건수가 된다. 위 조건에서는 department_name = 'Executive'가 추가로 조건으로 지정되어 90번 부서에 해당하는 사원 건수만 출력된다.
+
+
+
+. order by, group by
+select 절에 없는 컬럼으로 order by 가능
+
+group by 표현식이 아닌 컬럼은 전체 구문에서 사용될 수 없다 (ex. order by)
+
+
+
+. ntile (랭킹)
+SELECT 제품 ID , 판매금액 ) as 판매금액합,?NTILE (4) over (order by SUM( 판매금액) DESC) as 등급
+FROM?제품
+GROUP BY 제품 ID
+ORDER BY 등급
+
+
+
+. char, varchar
+char는 처음 설정한 크기가 유지되어 데이터가 짧으면 나머지는 빈 문자열로 채워짐
+
+varchar는 설정 크기 이내에서 데이터의 길이에 맞추어 저장됨
+
+
