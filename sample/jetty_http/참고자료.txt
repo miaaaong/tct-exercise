@@ -1,0 +1,9 @@
+[JAVA] Jetty를 이용한 Http 통신 (Server, Client)
+https://blog.naver.com/PostView.naver?blogId=ambidext&logNo=222434508009&categoryNo=0&parentCategoryNo=10&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search
+
+[서블릿/JSP] Servlet 3.0에서 Part API를 통한 파일업로드 구현하기
+https://dololak.tistory.com/726
+
+서블릿 3.0 파일 업로드
+https://chinggin.tistory.com/213
+
