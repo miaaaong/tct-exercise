@@ -1,6 +1,7 @@
 package sample.jetty_http;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -21,13 +22,30 @@ import com.google.gson.JsonObject;
 public class SampleServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static final String FILE_DIR = "D:\\eclipse\\ssp_exercise_2022\\2021\\sp_workspace\\sp_java_test\\Sample\\uploads";
-	private static final MultipartConfigElement MULTI_PART_CONFIG = new MultipartConfigElement(FILE_DIR);
-	// new MultipartConfigElement(tempDir, multipartRequestMaxSize, multipartRequestMaxSize, multipartReadBufferSize));
+	private static String FILE_DIR;
+	private static MultipartConfigElement MULTI_PART_CONFIG;
 	
 	@Override
 	public void init() throws ServletException {
-		// TODO 초기에 한 번 필요한 작업
+		// 초기에 한 번 필요한 작업
+		
+		// init parameter
+		String param1 = getInitParameter("param1");
+		String param2 = getInitParameter("param2");
+		System.out.println(param1);
+		System.out.println(param2);
+		
+		try {
+			File tempUploadDir = new File("./uploads");
+			FILE_DIR = tempUploadDir.getCanonicalPath();
+			MULTI_PART_CONFIG = new MultipartConfigElement(FILE_DIR);
+			// multi part 설정을 다 하는 경우...
+			// new MultipartConfigElement(tempDir, multipartRequestMaxSize, multipartRequestMaxSize, multipartReadBufferSize));
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	// GET 처리
