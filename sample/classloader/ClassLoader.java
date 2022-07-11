@@ -11,7 +11,7 @@ import java.net.URLClassLoader;
 public class ClassLoader {
 
 	// URLClassLoader, Reflection
-	// Âü°í - https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files
+	// ì°¸ê³  - https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files
 	public void loadAndInvoke() {
 		File file = new File("c:\\myclasses\\");
 
@@ -42,7 +42,7 @@ public class ClassLoader {
 			Method method = myclass.getMethod("example", int.class);
 			method.invoke(instance, 10);
 			
-			// static methodÀÎ °æ¿ì
+			// static method 
 			Method m = myclass.getMethod("main", String[].class);
 			String[] args = new String[0];
 			m.invoke(null, args);  // invoke the method
