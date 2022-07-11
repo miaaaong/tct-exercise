@@ -71,12 +71,34 @@ public class ExternalProcess {
 			System.exit(-1);
 		}
 	}
+	
+	// 프로세스 실행 - console 입출력
+	// 참고 - https://stackoverflow.com/questions/5591215/run-external-program-concurrently-and-communicate-with-it-through-stdin-stdout
+	public void callProcess4(String param) {
+		Process proc = null;
+		try {
+			proc = new ProcessBuilder("/bin/bash").start();
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.exit(-1);
+		}
+		
+		PrintWriter out = new PrintWriter(proc.getOutputStream());
+		out.println("touch hello1");
+		out.flush();
 
+		out.println("ls -la hel*");
+		out.flush();
+
+		Scanner in = new Scanner(proc.getInputStream());
+		in.nextLine();
+	}	
+	
 	// argument가 있는 프로세스 실행 - Runtime 사용
 	public String callProcess3(String message) {
 		String msg = null;
 		String[] cmd = { "CODECONV.EXE", message };
-        Process p;
+        	Process p;
 		try {
 			p = Runtime.getRuntime().exec(cmd);
 			p.waitFor();
