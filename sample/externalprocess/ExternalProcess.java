@@ -91,7 +91,9 @@ public class ExternalProcess {
 		out.flush();
 
 		Scanner in = new Scanner(proc.getInputStream());
-		in.nextLine();
+		while (in.hasNextLine())
+            		System.out.println(in.nextLine());
+		
 	}	
 	
 	// argument가 있는 프로세스 실행 - Runtime 사용
