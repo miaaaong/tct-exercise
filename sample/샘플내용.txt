@@ -22,5 +22,17 @@ socket
 8) socket 통신 - multi request 처리를 위한 서버 구현
 socket/multirequest
 
-9) thread - message broker 예제
+9) thread - message broker (producer/consumer), queue
 messagebroker
+
+10) class loader, reflection
+classloader
+
+11) timer, timeout task
+timer
+
+12) http request/reponse/servlet/multipart ...
+jetty_http
+
+13) service proxy - http request/response 속성 유지 및 전달, json parsing
+SSP_2022
