@@ -36,3 +36,6 @@ jetty_http
 
 13) service proxy - http request/response 속성 유지 및 전달, json parsing
 SSP_2022
+
+14) 외부 프로세스로 java class 실행
+externalprocess - JavaSubProcess
