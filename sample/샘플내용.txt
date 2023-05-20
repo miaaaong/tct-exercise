@@ -39,3 +39,6 @@ SSP_2022
 
 14) 외부 프로세스로 java class 실행
 externalprocess - JavaSubProcess
+
+15) json 파싱 (string - json object - value)
+json
