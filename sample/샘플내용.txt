@@ -31,7 +31,7 @@ classloader
 11) timer, timeout task
 timer
 
-12) http request/reponse/servlet/multipart ...
+12) http request / reponse / servlet / multipart / service proxy ...
 jetty_http
 
 13) service proxy - http request/response 속성 유지 및 전달, json parsing
