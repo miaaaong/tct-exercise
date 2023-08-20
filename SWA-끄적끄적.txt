@@ -1,0 +1,27 @@
+* MSA CQRS
+CQRS 복제 대상은 CUD 빈도가 낮은 테이블이 적합
+지연 없는 실시간 데이터 조회는 CQRS가 아니라 해당 서비스를 직접 호출해야 함
+
+
+* Statement Cache
+SQL parsing 오버헤드를 줄여 성능 향상 (SQL 실행 성능이 아님...)
+statement cache가 사용하는 메모리를 줄이면 fetch size를 줄인다
+
+
+* Java Heap
+https://jckim-dev.tistory.com/entry/JAVA-Garbage-Collection
+New - 생명 주기가 짧은 객체가 저장되는 영역
+Old - 생명 주기가 긴 객체가 저장되는 영역, GC 되지 않고 오래 보관
+객체 생명 주기가 짧게 예상되면 new 영역을 크게 하여 minor GC 횟수를 줄이고 old 영역으로 넘어가는 비율을 줄인다
+
+
+* Cache 적용 
+정보 업데이트 주기가 고정적이고 조회 호출 빈도가 높은 대상이 적합
+실시간, 일회성 조회 데이터는 캐시로 활용하기 어려움
+데이터 변동 주기가 길고, 조회 건수가 많을수록 캐시를 적용하는 것이 효과적
+
+
+* Java Heap 사용량 모니터링
+heap 사용량이 떨어지지 않고 유지된다면 heap 메모리 부족으로 이해 full GC 수행이 나타나는 패턴
+heap 메모리 관련 설정이 적절한 지 확인 필요
+
