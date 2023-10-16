@@ -1,0 +1,34 @@
+1) Job (Class)
+url: String
+parameters: String[]
+nextJobs: List<List<Job>>
+void run()
+
+2) Job - run()
+url, parameters가 존재하는가?
+	url 호출하여 리턴된 결과로 parameters 업데이트
+	종료
+nextJobs에 대해 for loop
+	List<Job>의 크기가 1이면 
+		해당 Job의 run() 실행
+	List<Job>의 크기가 1보다 크면 
+		모든 Job별로 run()을 실행하는 Thread 생성
+		모든 Thread의 실행이 완료될 때까지 대기
+
+3) Job 객체 생성
+(1) json에서 url과 parameters가 있으면 
+	객체에 설정
+	객체 리턴, 종료
+(2) from에 매핑되는 value 찾음
+(3) 해당 value로 Job 객체 생성((1)로 감)
+(4) 생성한 Job 객체를 nextJobs에 List로 추가
+(5) 해당 value에 next (1개 이상)가 존재하는가
+	for loop:
+		next value 찾음
+		해당 value로 Job 객체 생성
+		List에 Job 객체 담음
+	List를 nextJobs에 추가
+	next가 하나인 경우 해당 value에 대해 5번 부터 반복
+(6) 현재 value에 end가 존재하는가
+	종료
+(7) 객체 리턴
