@@ -13,7 +13,9 @@ public class ClassLoader {
 	// URLClassLoader, Reflection
 	// 참고 - https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files
 	public void loadAndInvoke() {
+		// class file이 위치한 루트 디렉토리 또는 jar 파일 경로
 		File file = new File("c:\\myclasses\\");
+		// File file = new File("./LIB/" + computingLib + ".jar");
 
 		try {
 			// Convert File to a URL
