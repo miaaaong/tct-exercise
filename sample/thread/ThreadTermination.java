@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ThreadTermination {
 	
-	// ���� 
+	// thread 실행 후 모두 종료 대기 - 참조
 	// https://www.pkslow.com/archives/wait-for-threads-to-finish-en
 	// https://stackoverflow.com/questions/1250643/how-to-wait-for-all-threads-to-finish-using-executorservice
 
