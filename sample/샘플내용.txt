@@ -42,3 +42,6 @@ externalprocess - JavaSubProcess
 
 15) json 파싱 (string - json object - value)
 json
+
+16) thread 종료 대기 
+thread
