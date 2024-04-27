@@ -1,0 +1,9 @@
+각 state들이 중첩된 형식의 workflow를 실행하여 결과 리턴하기
+
+state 타입이 다르므로 상속받은 구조로 구현하여 workflow를 run하면 하위에서 알아서 자기 프로세스를 실행하도록 구성...
+
+StateInfo - abstract 클래스로, state 타입별 프로세스 실행 후 다음 state에 대한 값 리턴하는 run 메소드 구현하도록 함
+ . ActionState - http api 호출 후 응답 결과를 전역 Variables에 반영 후, next state 리턴
+ . ChoiceState - variables 현재 값에 대한 조건에 따라 적절한 next state를 골라 리턴
+ . ParallelState - 하위 workflow를 병렬로 실행하여 모두 완료 후 next state 리턴
+
