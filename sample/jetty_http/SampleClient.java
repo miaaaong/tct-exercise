@@ -20,7 +20,7 @@ public class SampleClient {
 		// 1. GET
 		try {
 			httpClient.start();
-			// 참고 - url에 whitespace 등 특수문자가 포함되는 경우 변환할 것
+			// 참고 - query string에 whitespace 등 특수문자가 포함되는 경우 다음과 같이 변환하여 url에 붙여줄 것
 			// URLEncoder.encode(value, "UTF-8")
 			ContentResponse contentResponse = httpClient.newRequest("http://127.0.0.1:8080/RECEIVE/test")
 					.method(HttpMethod.GET).send();
