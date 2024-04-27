@@ -1,0 +1,11 @@
+각 device별 실행할 commands를 찾은 후 요청하여 결과를 모두 모아 리턴
+device에 실행 전 요청 가능한 상태인지 확인 -> 동시에 여러 곳에서 확인하므로 synchronized 적용
+
+EdgeNodeServlet
+ . handleServerRequest - device별로 실행할 commands를 찾아 병렬로 실행, 모두 완료되면 결과 취합하여 리턴
+ . runLibrary - 제공된 외부 jar 파일의 class 실행
+
+CommandProcessor - device별 processor로, 실행해야 할 command를 순차적으로 http api를 실행하여 device에 요청 후 결과 리턴
+
+ProcessManager - device별로 현재 요청 처리가 가능한 상태인지 정보 관리, 상태 업데이트는 동시 접근에 대한 제어를 위해 synchronized 적용
+
