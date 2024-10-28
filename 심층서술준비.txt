@@ -121,6 +121,14 @@ API Gateway는 클라이언트와 API 엔드포인트 사이에 있는 data plan
 
 
 
+# Consensus - Raft
+
+https://seongjin.me/raft-consensus-algorithm/
+
+분산 시스템의 내결함성 확보
+
+
+
 # 분산 서비스 관련 아이템들...
 protobuf, gRPC
 sharding
