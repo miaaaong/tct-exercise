@@ -13,6 +13,7 @@ OpenTracing: 어플리케이션 간 분산 추적 표준
 대표적 구현체: Jaeger, Zipkin
 
 OpenTracing 원리 - https://www.nurinamu.com/dev/2020/02/26/opentracing/
+Zipkin 아키텍처 - https://zipkin.io/pages/architecture.html
 OpenTracing과 Jaeger - https://bourbonkk.tistory.com/84
 OpenTracing과 Zipkin - https://engineering.linecorp.com/ko/blog/line-ads-msa-opentracing-zipkin
 
