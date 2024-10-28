@@ -115,6 +115,7 @@ https://velog.io/@akfls221/resilience4j-%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB
 # API Gateway
 
 https://nginxstore.com/blog/api-gateway/api-gateway-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/
+https://bcho.tistory.com/1005
 
 API Gateway는 클라이언트와 API 엔드포인트 사이에 있는 data plane으로 라우팅, 정책, 보안을 담당하는 개별 프록시 서버
 
