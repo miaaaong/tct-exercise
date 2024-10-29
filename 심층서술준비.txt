@@ -143,8 +143,14 @@ circuitbreaker
 
 
 # 구성도
-xxxmanager, xxxworker, xxxserver ...
-BufferedReader, httpservlet, jetty, Gson, ExecutorService (thread pool), Thread, classloader
+xxxmanager, xxxworker, xxxserver, xxxservlet, xxxexecutor...
+
+BufferedReader - 버퍼 사용으로 입출력 속도 빠르고 라인 단위 입출력 편리
+httpservlet
+jetty - http service를 제공하기 위해 적용, 웹 서버이자 자바 서블릿 컨테이너로 경량이며 내장 가능하고 확장성이 뛰어남
+Gson - 자바 객체와 json 간 변환 용이
+ExecutorService (thread pool) - 스레드의 생성 소멸 개수 제어가 가능하고 자바에서 효율적 처리를 위해 제공하는 라이브러리
+Thread - 병렬로 실행하기 위해 적용
 
 
 
@@ -152,13 +158,14 @@ BufferedReader, httpservlet, jetty, Gson, ExecutorService (thread pool), Thread,
 zero administration
 remote management
 opentelemetry
-서버 이중화 (가용성)
-인터페이스 방식 추가
+서버 이중화 (가용성) - 안정적 운영
+인터페이스 방식 추가 - 요청량, 다양한 시스템 연계 등을 위해 pub/sub 등 지원
 인증/권한
-로깅
+로깅 - 운영 상황 대응 및 추적 시 활용
 이력 관리
 상태 조회, 중지/재시작 기능 
 fatigue 관리
 kubernetes
 모니터링/통계/레포트
+실행 정보, 이력 관리 등을 위해 DB 저장
 
